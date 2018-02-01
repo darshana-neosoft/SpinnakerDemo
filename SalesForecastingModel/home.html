@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SFM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/compiled/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="css/screen.css">
+
+  <style>    
+    /* Set black background color, white text and some padding */
+    .footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  .tabcontent{
+     text-align: left;
+  }
+   .loyalty{
+     text-align: right;
+  }
+  .info{
+     font-style: italic
+  }
+
+.rectangle{
+    width:22px;
+    height:26px;
+    margin: 5px;
+    border: 4px solid rgba(0, 0, 0, .2);
+    background:black;
+}
+
+  .form_content{
+    text-align: center;
+  }
+  .tab_title{
+    font-size:150%;
+    color: #337ab7;
+  }
+  .tab_subtitle{
+    font-size:120%;
+    
+  }
+.form-control{
+      font-size: 19px;
+}
+
+  .screen{
+   font-family: CenturyGothic;
+  }
+  .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #fff;
+    background-color: #C0392B;
+}
+
+.a {
+    color: #C0392B;
+    text-decoration: none;
+}
+  .foo {
+   display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+    color:darkred;
+    width: 105px;
+    overflow:hidden;
+    z-index: 1001;
+  }
+
+  .overlayclass {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+  </style>
+</head>
+<body style="font-size: 19px">
+
+
+<div class="container-fluid text-center">    
+  <div class="row">
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+          </div>
+        </div>
+      </div>
+         <span class="pull-right rectangle">
+        <div class="" >
+        <ul class="pull-right">
+          
+            <a href="logout.php" title="Logout">    
+            <i style="color:white;" class="fa fa-power-off"></i>
+              </a>
+          
+        </ul>
+      </div> 
+      </span>
+
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="screen">
+          <span class="blackbox pull-center"></span>
+           <h2> <b><p style="color:#C0392B">SALES FORECASTING MODEL (SFM)</p></b></h2>
+           <h4> <b>POWERED BY SPINNAKER ANALYTICS</b></h4>
+          </div>
+        </div>
+
+        
+      </div> 
+
+</div>
+
+<div class="container-fluid text-center well screen">
+ 
+    <ul class="nav nav-pills nav-justified" id="mytab">
+    <li class="active"><a href="#input_data" data-toggle="tab">INPUT/VIEW DATA</a></li>
+    <li><a href="#forecast_engine" data-toggle="tab">FORECASTING ENGINE </a></li>
+    <li><a href="#modeloutput" data-toggle="tab">MODEL OUTPUT</a></li>
+     <li><a href="#forecast_methodology" data-toggle="tab">FORECASTING METHODOLOGY</a></li>
+    <li><a href="#scenario_planning" data-toggle="tab">SCENARIO PLANNING</a></li>
+  </ul>
+</div>
+
+
+<div class="tab-content screen ">
+
+          <div class="tab-pane fade in active container well" id="input_data">
+</br>
+             <div class="col-sm-12">
+         
+           <div class="row">
+ <div class="form-group col-md-5 tabcontent">
+  <input type="submit" style="font-size: 25px; width: 600px; text-align: left" value="View Full Year Historical Data
+" id="historical_data" class="btn btn-info" onclick="location.href='historical_data.html#historical_data' " >
+  </input>
+  <label > Data Available From 2014 Till: <label style="color:red;">2017</label></label>
+
+  </div>
+  </div>
+   <div class="row">
+  <div class="form-group col-md-5 tabcontent">
+<input type="submit" style="font-size: 25px; width: 600px; text-align: left" id="my-button" class="btn btn-info" value="Input Current Year Full Month Data" > 
+  <label > Data Available Till: <label style="color:red;" >April 2018</label></label>
+  <input type="file" name="my_file" id="my-file" accept=".csv, .xlsx" style="display:none">
+
+ </div>
+</div>
+ <div class="row">
+<div class="form-group col-md-5 tabcontent">
+<input type="submit" style="font-size: 25px; width: 600px; text-align: left" id="my-button1" class="btn btn-info" value="Input Pipeline Data (Incl. Open Cases)">  
+ <label > Data Available As On: <label style="color:red;" >June 15, 2018</label></label>
+ <input type="file" name="my_file" id="my-file1" accept=".csv, .xlsx" style="display:none">
+
+ </div>
+</div>
+  </div>  
+</div>
+
+<!--/.tab-pane -->
+
+        <div class="tab-pane fade container well " id="forecast_engine" >
+           <div class="">
+  <div class="tabcontent tab_title"><b>Forecasting Engine</b></div>
+</div>
+
+             <div class="col-sm-12">
+         
+           <div class="row">
+<div class="row">
+ <fieldset>
+<div class="row">
+  <div class="form-group col-md-4 tabcontent">
+  <label style="padding: 5%;"> Forecasting Granularity:</label>
+  </div>
+
+  </div>
+<form>
+  <div class="row">
+ <div class="col-md-4 loyalty">
+  Geography/Territory:
+  </div>
+  <div class="col-md-1">
+<input type="checkbox" class="form-control" name="geography" class="chk" value="geography" id="geography" required></input>
+  </div>
+     </div>
+<div class="row">
+ <div class="col-md-4 loyalty">
+Product/LOB:
+  </div>
+  <div class="col-md-1">
+<input type="checkbox" class="form-control" name="product" class="chk" id="product" value="product" required></input>
+  </div>
+     </div>
+
+<div class="row">
+ <div class="col-md-4 loyalty">
+  Case Size:
+  </div>
+  <div class="col-md-1">
+<input type="checkbox" class="form-control" name="case_size" class="chk" id="case_size" value="case_size" required></input>
+
+  </div>
+     </div>
+
+ </fieldset>
+
+</div>
+</br>
+</br>
+</br>
+<div class="row">
+ <div class="form-group col-md-4 tabcontent">
+  <label >Include Pipeline Data (Open Cases):</label>
+   </div>
+   <div class="col-md-1">
+<input type="checkbox" class="form-control" name="pipeline" value="1" required></input>
+</form>
+  </div>
+  </div>
+        </div>
+ </div>
+  <div id="overlay" class="overlayclass">
+  <div id="myDiv">
+
+          <img id="loading-image" src="img/ajax-loader.gif" class="centered"></img>
+          
+    </div>
+
+</div>
+   <input type="button" style="font-size: 21px;" class="btn btn-success" id="buttonClass" value="View 2018 Forecast" >
+
+           </div><!--/.tab-pane -->
+
+          <div class="tab-pane fade container well" id="modeloutput">
+
+           <div class="">
+  <div class="tabcontent tab_title"><b>2018 Full Year Model Output</b></div></br>
+</div>
+<div class="row">
+<div class="col-sm-12">  
+   <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_geo_pro_case">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>Geography</B></th>
+          <th class="text-center "><B>LOB</B></th>
+          <th class="text-center"><B>Case Size</B></th>
+          <th class="text-center"><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>    
+        </tr>
+      </thead>
+      <tbody>
+ 
+        <tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 147 </td>
+<td class="text-center" > $1,277  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 82  </td>
+<td class="text-center" > $1,977  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 218 </td>
+<td class="text-center" > $1,839  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 39  </td>
+<td class="text-center" > $961  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 77  </td>
+<td class="text-center" > $1,228  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 92  </td>
+<td class="text-center" > $2,076  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 25  </td>
+<td class="text-center" > $79 </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 21  </td>
+<td class="text-center" > $481  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $11 </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 9 </td>
+<td class="text-center" > $31 </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 5 </td>
+<td class="text-center" > $18 </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 192 </td>
+<td class="text-center" > $601  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 52  </td>
+<td class="text-center" > $1,897  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 100 </td>
+<td class="text-center" > $592  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $335  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 41  </td>
+<td class="text-center" > $2,024  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 21  </td>
+<td class="text-center" > $1,246  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 26  </td>
+<td class="text-center" > $415  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $96 </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $14 </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 11  </td>
+<td class="text-center" > $372  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $74 </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 1521  </td>
+<td class="text-center" > $2,626  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 109 </td>
+<td class="text-center" > $1,025  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 223 </td>
+<td class="text-center" > $1,126  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 27  </td>
+<td class="text-center" > $383  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 17  </td>
+<td class="text-center" > $338  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $762  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 327 </td>
+<td class="text-center" > $729  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 15  </td>
+<td class="text-center" > $456  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 10  </td>
+<td class="text-center" > $47 </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 26  </td>
+<td class="text-center" > $1,115  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 111 </td>
+<td class="text-center" > $2,987  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 110 </td>
+<td class="text-center" > $931  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 238 </td>
+<td class="text-center" > $772  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 40  </td>
+<td class="text-center" > $1,187  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 33  </td>
+<td class="text-center" > $1,441  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 81  </td>
+<td class="text-center" > $655  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 65  </td>
+<td class="text-center" > $300  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $209  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 7 </td>
+<td class="text-center" > $1  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $471  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 87  </td>
+<td class="text-center" > $759  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 39  </td>
+<td class="text-center" > $792  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 244 </td>
+<td class="text-center" > $697  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 54  </td>
+<td class="text-center" > $843  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 184 </td>
+<td class="text-center" > $1,150  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 73  </td>
+<td class="text-center" > $685  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 30  </td>
+<td class="text-center" > $168  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 7 </td>
+<td class="text-center" > $122  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $2,385  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $63 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $1,822  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 24  </td>
+<td class="text-center" > $685  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 93  </td>
+<td class="text-center" > $502  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $48 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $37 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 15  </td>
+<td class="text-center" > $194  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $17 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $12 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $5  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $2  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 9 </td>
+<td class="text-center" > $324  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 59  </td>
+<td class="text-center" > $714  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 105 </td>
+<td class="text-center" > $1,006  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 19  </td>
+<td class="text-center" > $392  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $310  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 5 </td>
+<td class="text-center" > $68 </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $37 </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $5  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $33 </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $9  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 121 </td>
+<td class="text-center" > $586  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 22  </td>
+<td class="text-center" > $172  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 157 </td>
+<td class="text-center" > $701  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $337  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 4 </td>
+<td class="text-center" > $21 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 21  </td>
+<td class="text-center" > $256  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $14 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $20 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $8  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $19 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $12 </td></tr>      
+ </tbody>
+    </table>
+   
+   <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_geo" style="display: none">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>Geography</B></th>
+          <th class="text-center "><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>
+        </tr>
+      </thead>
+      <tbody>
+ 
+       <tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > 722 </td>
+<td class="text-center" > $7,665  </td>
+</tr>
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > 717 </td>
+<td class="text-center" > $9,978  </td>
+</tr>
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > 454 </td>
+<td class="text-center" > $7,667  </td>
+</tr>
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > 701 </td>
+<td class="text-center" > $8,952  </td>
+</tr>
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > 2288  </td>
+<td class="text-center" > $8,608  </td>
+</tr>
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > 155 </td>
+<td class="text-center" > $3,324  </td>
+</tr>
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > 359 </td>
+<td class="text-center" > $2,147  </td>
+</tr>
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > 218 </td>
+<td class="text-center" > $2,898  </td>
+</tr>
+
+        
+       
+ </tbody>
+   </table>
+
+
+           <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_prod" style="display: none">
+      <thead>
+        <tr class="table-head">
+         <th class="text-center "> <B>LOB</B></th>
+          <th class="text-center "><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>
+        </tr>
+      </thead>
+      <tbody>
+ 
+       <tr>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 2196  </td>
+<td class="text-center" > $10,982 </td>
+</tr>
+<tr>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 497 </td>
+<td class="text-center" > $8,193  </td>
+</tr>
+<tr>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 202 </td>
+<td class="text-center" > $4,488  </td>
+</tr>
+<tr>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 60  </td>
+<td class="text-center" > $1,402  </td>
+</tr>
+<tr>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 23  </td>
+<td class="text-center" > $119  </td>
+</tr>
+<tr>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 321 </td>
+<td class="text-center" > $5,942  </td>
+</tr>
+<tr>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 1378  </td>
+<td class="text-center" > $7,235  </td>
+</tr>
+<tr>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 486 </td>
+<td class="text-center" > $1,759  </td>
+</tr>
+<tr>
+<td class="text-center" > Other </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $177  </td>
+</tr>
+<tr>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 68  </td>
+<td class="text-center" > $4,395  </td>
+</tr>
+<tr>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 369 </td>
+<td class="text-center" > $6,549  </td>
+</tr>
+
+ </tbody>
+    </table>
+
+   <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_case" style="display: none">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>Case Size</B></th>
+          <th class="text-center "><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>
+        </tr>    
+      </thead>
+      <tbody>
+ 
+       <tr>
+<td class="text-center" > L </td>
+<td class="text-center" > 4093  </td>
+<td class="text-center" > $24,262 </td>
+</tr>
+<tr>
+<td class="text-center" > M </td>
+<td class="text-center" > 1393  </td>
+<td class="text-center" > $20,683 </td>
+</tr>
+<tr>
+<td class="text-center" > S </td>
+<td class="text-center" > 128 </td>
+<td class="text-center" > $6,293  </td>
+</tr>
+
+ </tbody>
+    </table>
+
+     <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_geo_prod" style="display: none">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>Geography</B></th>
+          <th class="text-center "><B>LOB</B></th>
+          <th class="text-center"><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 147 </td>
+<td class="text-center" > $1,277  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 82  </td>
+<td class="text-center" > $1,977  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 218 </td>
+<td class="text-center" > $1,839  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 39  </td>
+<td class="text-center" > $961  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 77  </td>
+<td class="text-center" > $1,228  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 92  </td>
+<td class="text-center" > $2,076  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 25  </td>
+<td class="text-center" > $79 </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 21  </td>
+<td class="text-center" > $481  </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $11 </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 9 </td>
+<td class="text-center" > $31 </td></tr>
+
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 5 </td>
+<td class="text-center" > $18 </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 192 </td>
+<td class="text-center" > $601  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 52  </td>
+<td class="text-center" > $1,897  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 100 </td>
+<td class="text-center" > $592  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $335  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 41  </td>
+<td class="text-center" > $2,024  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 21  </td>
+<td class="text-center" > $1,246  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 26  </td>
+<td class="text-center" > $415  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $96 </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $14 </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 11  </td>
+<td class="text-center" > $372  </td></tr>
+
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $74 </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 1521  </td>
+<td class="text-center" > $2,626  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 109 </td>
+<td class="text-center" > $1,025  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 223 </td>
+<td class="text-center" > $1,126  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 27  </td>
+<td class="text-center" > $383  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 17  </td>
+<td class="text-center" > $338  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $762  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 327 </td>
+<td class="text-center" > $729  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 15  </td>
+<td class="text-center" > $456  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 10  </td>
+<td class="text-center" > $47 </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 26  </td>
+<td class="text-center" > $1,115  </td></tr>
+
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 111 </td>
+<td class="text-center" > $2,987  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 110 </td>
+<td class="text-center" > $931  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 238 </td>
+<td class="text-center" > $772  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 40  </td>
+<td class="text-center" > $1,187  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 33  </td>
+<td class="text-center" > $1,441  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 81  </td>
+<td class="text-center" > $655  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 65  </td>
+<td class="text-center" > $300  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $209  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 7 </td>
+<td class="text-center" > $1  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $471  </td></tr>
+
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 87  </td>
+<td class="text-center" > $759  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 39  </td>
+<td class="text-center" > $792  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 244 </td>
+<td class="text-center" > $697  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 54  </td>
+<td class="text-center" > $843  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 184 </td>
+<td class="text-center" > $1,150  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 73  </td>
+<td class="text-center" > $685  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 30  </td>
+<td class="text-center" > $168  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 7 </td>
+<td class="text-center" > $122  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $2,385  </td></tr>
+
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $63 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $1,822  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 24  </td>
+<td class="text-center" > $685  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 93  </td>
+<td class="text-center" > $502  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $48 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $37 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 15  </td>
+<td class="text-center" > $194  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $17 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $12 </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $5  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $2  </td></tr>
+
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 9 </td>
+<td class="text-center" > $324  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 59  </td>
+<td class="text-center" > $714  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 105 </td>
+<td class="text-center" > $1,006  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 19  </td>
+<td class="text-center" > $392  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $310  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 5 </td>
+<td class="text-center" > $68 </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $37 </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $5  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 0 </td>
+<td class="text-center" > $33 </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $0  </td></tr>
+
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $9  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > A&H </td>
+<td class="text-center" > 121 </td>
+<td class="text-center" > $586  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > 22  </td>
+<td class="text-center" > $172  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > FL  </td>
+<td class="text-center" > 157 </td>
+<td class="text-center" > $701  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $337  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > 4 </td>
+<td class="text-center" > $21 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > 21  </td>
+<td class="text-center" > $256  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $14 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > EIL </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $20 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > 1 </td>
+<td class="text-center" > $8  </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $19 </td></tr>
+
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > Other </td>
+<td class="text-center" > 2 </td>
+<td class="text-center" > $12 </td></tr>
+      
+ </tbody>
+    </table>
+     <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_geo_case" style="display: none">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>Geography</B></th>
+          <th class="text-center "><B>Case Size</B></th>
+          <th class="text-center"><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>      
+        </tr>
+      </thead>
+      <tbody>
+       <tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 428 </td>
+<td class="text-center" > $1,847  </td>
+</tr>
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 290 </td>
+<td class="text-center" > $3,369  </td>
+</tr>
+<tr>
+<td class="text-center" > Benelux </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 4 </td>
+<td class="text-center" > $2,449  </td>
+</tr>
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 616 </td>
+<td class="text-center" > $8,398  </td>
+</tr>
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 85  </td>
+<td class="text-center" > $1,521  </td>
+</tr>
+<tr>
+<td class="text-center" > France  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 16  </td>
+<td class="text-center" > $60 </td>
+</tr>
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 108 </td>
+<td class="text-center" > $928  </td>
+</tr>
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 332 </td>
+<td class="text-center" > $6,183  </td>
+</tr>
+<tr>
+<td class="text-center" > Germany </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $556  </td>
+</tr>
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 499 </td>
+<td class="text-center" > $5,876  </td>
+</tr>
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 193 </td>
+<td class="text-center" > $2,604  </td>
+</tr>
+<tr>
+<td class="text-center" > Iberia  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 9 </td>
+<td class="text-center" > $472  </td>
+</tr>
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 2180  </td>
+<td class="text-center" > $5,506  </td>
+</tr>
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 98  </td>
+<td class="text-center" > $3,055  </td>
+</tr>
+<tr>
+<td class="text-center" > Italy </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 10  </td>
+<td class="text-center" > $47 </td>
+</tr>
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 132 </td>
+<td class="text-center" > $1,380  </td>
+</tr>
+<tr>
+<td class="text-center" > Nordics </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 23  </td>
+<td class="text-center" > $1,943  </td>
+</tr>
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 157 </td>
+<td class="text-center" > $701  </td>
+</tr>
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 168 </td>
+<td class="text-center" > $1,035  </td>
+</tr>
+<tr>
+<td class="text-center" > PCH </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 34  </td>
+<td class="text-center" > $410  </td>
+</tr>
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 105 </td>
+<td class="text-center" > $1,006  </td>
+</tr>
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 95  </td>
+<td class="text-center" > $1,544  </td>
+</tr>
+<tr>
+<td class="text-center" > Switzerland  Austria  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 18  </td>
+<td class="text-center" > $357  </td>
+</tr>
+
+ </tbody>
+    </table>
+
+     <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable_prod_case" style="display: none">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>LOB</B></th>
+          <th class="text-center "><B>Case Size</B></th>
+          <th class="text-center"><B>Bound Volume</B></th>
+          <th class="text-center"><B>Bound Dollars ('000)</B></th>
+        </tr>
+      </thead>
+      <tbody>
+ 
+        <tr>
+<td class="text-center" > A&H </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 1779  </td>
+<td class="text-center" > $6,891  </td>
+</tr>
+<tr>
+<td class="text-center" > A&H </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 409 </td>
+<td class="text-center" > $2,270  </td>
+</tr>
+<tr>
+<td class="text-center" > A&H </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 8 </td>
+<td class="text-center" > $1,822  </td>
+</tr>
+<tr>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 301 </td>
+<td class="text-center" > $3,933  </td>
+</tr>
+<tr>
+<td class="text-center" > Casualty  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 196 </td>
+<td class="text-center" > $4,260  </td>
+</tr>
+<tr>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 48  </td>
+<td class="text-center" > $1,522  </td>
+</tr>
+<tr>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 139 </td>
+<td class="text-center" > $2,580  </td>
+</tr>
+<tr>
+<td class="text-center" > Cyber </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 15  </td>
+<td class="text-center" > $385  </td>
+</tr>
+<tr>
+<td class="text-center" > EIL </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 57  </td>
+<td class="text-center" > $1,268  </td>
+</tr>
+<tr>
+<td class="text-center" > EIL </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 3 </td>
+<td class="text-center" > $133  </td>
+</tr>
+<tr>
+<td class="text-center" > Entertainment </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 23  </td>
+<td class="text-center" > $119  </td>
+</tr>
+<tr>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 92  </td>
+<td class="text-center" > $2,076  </td>
+</tr>
+<tr>
+<td class="text-center" > Fire  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 229 </td>
+<td class="text-center" > $3,865  </td>
+</tr>
+<tr>
+<td class="text-center" > FL  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 1285  </td>
+<td class="text-center" > $6,733  </td>
+</tr>
+<tr>
+<td class="text-center" > FL  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 93  </td>
+<td class="text-center" > $502  </td>
+</tr>
+<tr>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 327 </td>
+<td class="text-center" > $729  </td>
+</tr>
+<tr>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 149 </td>
+<td class="text-center" > $998  </td>
+</tr>
+<tr>
+<td class="text-center" > Marine  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 10  </td>
+<td class="text-center" > $31 </td>
+</tr>
+<tr>
+<td class="text-center" > Other </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 14  </td>
+<td class="text-center" > $177  </td>
+</tr>
+<tr>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 26  </td>
+<td class="text-center" > $1,115  </td>
+</tr>
+<tr>
+<td class="text-center" > Surety  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 42  </td>
+<td class="text-center" > $3,280  </td>
+</tr>
+<tr>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > L </td>
+<td class="text-center" > 261 </td>
+<td class="text-center" > $2,378  </td>
+</tr>
+<tr>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > M </td>
+<td class="text-center" > 95  </td>
+<td class="text-center" > $3,825  </td>
+</tr>
+<tr>
+<td class="text-center" > Tech Lines  </td>
+<td class="text-center" > S </td>
+<td class="text-center" > 13  </td>
+<td class="text-center" > $347  </td>
+</tr>
+        
+       
+ </tbody>
+    </table>
+
+</br>
+</br>
+</br>
+
+
+  <h3 class="text-center title-dg">Sales Forecast by Product ($K)</h3>
+ <div class=" ">
+      <div class="table-container1">
+
+      <div class="row row-screen table-inner1" >
+      <div class="retative">
+      <div class="dot-hide"></div>    
+      <div id="yeartodate" style="width: 55% ;margin-bottom: 30px;"></div>
+      </div>
+      </div>
+      </div>      
+      </div>
+   
+<h3 class="text-center title-dg">Sales Forecast by Geography/Country ($K)</h3>
+ <div class=" ">
+      <div class="table-container1">
+
+      <div class="row row-screen table-inner1" >
+      <div class="retative">
+      <div class="dot-hide"></div>    
+      <div id="yeartodate1" style="width: 55% ;margin-bottom: 30px;"></div>
+      </div>
+      </div>
+      </div>      
+      </div>
+
+  <h3 class="text-center title-dg">Forecast by Case Size</h3>
+    <div class=" ">
+    <div class="table-container1">
+    <div class="row retative">
+    <div class="bg-white"></div>
+      <div id='piechart1'></div>
+      
+    </div>    
+    </div>
+    </div>
+    </div>
+
+ </div>
+</div>
+<!--/.tab-pane -->
+
+<div class="tab-pane fade container well" id="forecast_methodology">
+<div class="">
+  <div class="tabcontent tab_title"><b>Forecasting Methodology </b></div>
+</div>
+</br>
+<div class="row">
+<div class="image-set">
+  <img src="img/Forecast.png" style="width: 119%;">
+</div>
+</div>  
+</div>
+
+<!--/.tab-pane -->
+
+
+ <div class="tab-pane fade container well" id="scenario_planning" >
+            <div class="">
+  <div class="tabcontent tab_title"><b>Scenario Planning</b></div></br>
+</div>
+
+  <div class="row row-screen">
+  <h3 class="text-center" style="font-weight: bold;">Access Restricted</h3>
+</div>
+
+         </div>
+           
+          </div><!--/.tab-pane -->
+
+
+<script type="text/javascript">
+
+$('#my-button').click(function(){
+    $('#my-file').click();
+    var filename = $('#my-file').val();
+
+});
+
+$('#my-button1').click(function(){
+    $('#my-file1').click();
+
+});
+
+
+$('#buttonClass').click(function() {
+  var ids = $(':checkbox:checked').map(function() {
+    return this.id;
+  }).get();
+
+if (ids.includes('geography') & ids.includes('product') & ids.includes('case_size')){
+     $("#myTable_geo").css('display', 'none');
+     $("#myTable_prod").css('display', 'none');
+     $("#myTable_case").css('display', 'none');
+     $("#myTable_geo_prod").css('display', 'none');
+     $("#myTable_geo_case").css('display', 'none');
+     $("#myTable_prod_case").css('display', 'none');
+     $("#myTable_geo_pro_case").css('display', 'inline-table');
+  }
+else if (ids.includes('geography') & ids.includes('product')){
+     $("#myTable_geo_pro_case").css('display', 'none');
+     $("#myTable_prod").css('display', 'none');
+     $("#myTable_case").css('display', 'none');
+     $("#myTable_geo").css('display', 'none');
+     $("#myTable_geo_case").css('display', 'none');
+     $("#myTable_prod_case").css('display', 'none');
+     $("#myTable_geo_prod").css('display', 'inline-table');
+  }
+else if (ids.includes('geography') & ids.includes('case_size')){
+     $("#myTable_geo_pro_case").css('display', 'none');
+     $("#myTable_prod").css('display', 'none');
+     $("#myTable_case").css('display', 'none');
+     $("#myTable_geo").css('display', 'none');
+     $("#myTable_geo_prod").css('display', 'none');
+     $("#myTable_prod_case").css('display', 'none');
+     $("#myTable_geo_case").css('display', 'inline-table');
+  }
+else if (ids.includes('product') & ids.includes('case_size')){
+    $("#myTable_geo_pro_case").css('display', 'none');
+    $("#myTable_geo_case").css('display', 'none');
+    $("#myTable_case").css('display', 'none');
+    $("#myTable_geo").css('display', 'none');
+    $("#myTable_geo_prod").css('display', 'none');
+    $("#myTable_prod").css('display', 'none');
+    $("#myTable_prod_case").css('display', 'inline-table');
+  }
+else if (ids.includes('case_size')){
+    $("#myTable_geo_pro_case").css('display', 'none');
+    $("#myTable_geo_case").css('display', 'none');
+    $("#myTable_prod_case").css('display', 'none');
+    $("#myTable_geo").css('display', 'none');
+    $("#myTable_geo_prod").css('display', 'none');
+    $("#myTable_prod").css('display', 'none');
+    $("#myTable_case").css('display', 'inline-table');
+  }
+else if (ids.includes('geography')){
+     $("#myTable_geo_pro_case").css('display', 'none');
+     $("#myTable_prod").css('display', 'none');
+     $("#myTable_case").css('display', 'none');
+     $("#myTable_geo_prod").css('display', 'none');
+     $("#myTable_geo_case").css('display', 'none');
+     $("#myTable_prod_case").css('display', 'none');
+     $("#myTable_geo").css('display', 'inline-table');
+  }
+else if (ids.includes('product')){
+    $("#myTable_geo_pro_case").css('display', 'none');
+    $("#myTable_geo_case").css('display', 'none');
+    $("#myTable_case").css('display', 'none');
+    $("#myTable_geo").css('display', 'none');
+    $("#myTable_geo_prod").css('display', 'none');
+    $("#myTable_prod_case").css('display', 'none');
+    $("#myTable_prod").css('display', 'inline-table');
+  }
+
+if (ids.length > 0){
+     var $overlay = $("#overlay");
+    if ($overlay.is(":visible")) { return; }
+    $overlay.show();
+    setTimeout(function() {
+        $overlay.hide();
+          $("#user_id").css('display', 'none');
+  $('[href="#modeloutput"]').tab('show');
+    }, 4000);
+  }
+  else {
+    alert("Please Select any checkbox")
+  }
+
+})
+
+</script>
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/exporting.js"></script>
+<script type="text/javascript" src="js/zingchart.min.js"></script>
+<script type="text/javascript" src="js/zingchart-pie.min.js"></script>
+<script type="text/javascript" src="js/lastfullmonth.js"></script>
+
+</body>
+</html>
+

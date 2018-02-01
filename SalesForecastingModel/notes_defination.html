@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SFM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/compiled/font-awesome.css">
+
+  <style>    
+    /* Set black background color, white text and some padding */
+    .footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  .tabcontent{
+     text-align: left;
+  }
+   .loyalty{
+     text-align: right;
+  }
+  .info{
+     font-style: italic
+  }
+
+.rectangle{
+    width:22px;
+    height:26px;
+    margin: 5px;
+    border: 4px solid rgba(0, 0, 0, .2);
+    background:black;
+}
+
+  .form_content{
+    text-align: center;
+  }
+  .tab_title{
+    font-size:150%;
+    color: #337ab7;
+  }
+  .tab_subtitle{
+    font-size:120%;
+    
+  }
+.form-control{
+      font-size: 19px;
+}
+
+  .screen{
+   font-family: CenturyGothic;
+  }
+  .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #fff;
+    background-color: #C0392B;
+}
+
+.a {
+    color: #C0392B;
+    text-decoration: none;
+}
+  .foo {
+   display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: -webkit-translate(-50%, -50%);
+    transform: -moz-translate(-50%, -50%);
+    transform: -ms-translate(-50%, -50%);
+    color:darkred;
+    width: 105px;
+    overflow:hidden;
+    z-index: 1001;
+  }
+
+  .overlayclass {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#input_current_data{visibility: hidden;}
+#input_pipeline_data{visibility: hidden;}
+  </style>
+</head>
+<body style="font-size: 19px">
+
+
+<div class="container-fluid text-center">    
+  <div class="row">
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text-center">
+          </div>
+        </div>
+      </div>
+         <span class="pull-right rectangle">  
+        <div class="" >
+        <ul class="pull-right">
+          
+            <a href="/logout/" title="Logout">    
+            <i style="color:white;" class="fa fa-power-off"></i>
+              </a>
+          
+        </ul>
+      </div> 
+      </span>
+
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="screen">
+           <h2> <b><p style="color:#C0392B">SALES FORECASTING MODEL (SFM)</p></b></h2>
+           <h3> <b>POWERED BY SPINNAKER ANALYTICS</b></h3>
+          </div>
+        </div>
+
+        
+      </div> 
+
+</div>
+
+<div class="container-fluid text-center well screen">
+ 
+    <ul class="nav nav-pills nav-justified" id="mytab">
+     <li class="active"><a href="#historical_data" data-toggle="tab">FORECASTING METHODOLOGY</a></li>
+         <li ><a  href="home.html#sales_return" >HOME</a></li>
+
+  </ul>
+</div>
+
+<div class="tab-content screen ">
+
+          
+
+<!--/.tab-pane -->
+
+<div class="tab-pane fade in active container well" id="historical_data">
+<div class="">
+  <div class="tabcontent tab_title"><b>Forecasting Methodology </b></div>
+</div>
+</br>
+<div class="row">
+<div class="image-set">
+  <img src="img/Forecast.png" class="width-fluid" style="width: 100%">
+</div>
+</div>  
+</div>
+
+<!--/.tab-pane -->
+
+        
+
+<script type="text/javascript">
+
+
+  </script>
+</body>
+</html>

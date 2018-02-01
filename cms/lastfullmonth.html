@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CMS</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/screen.css">
+	<link rel="stylesheet" type="text/css" href="css/sales.css">
+    <link href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/rowreorder/1.2.0/css/rowReorder.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="side-bar">
+			<div class="row">
+				<h4 class="text-center">CASE MANAGEMENT & ANALYTICS DASHBOARD</h4>
+			</div>
+			<div class="row">
+				<ul class="side-menu nav nav-pills">
+					<li class="active">
+					<div class="hide-line"></div>
+						<a  href="#home" aria-controls="home" role="tab" data-toggle="tab" class="btn-block">Incoming Case Basket <span class="right-angle" ></span><span class=" line"></span></a>
+					</li>
+					<li>
+						<a href="#sales-track" aria-controls="sales-track" role="tab" data-toggle="tab" class="btn-block">Case Tracker <span class="right-angle"></span><span class=" line"></span></a>
+					</li>
+					<li class="disabled">
+						<a href="#return-track" aria-controls="return-track" role="tab" data-toggle="tab" class="btn-block">Productivity Tracker by Role <span class="right-angle"></span><span class=" line"></span></a>
+					</li>
+					<li class="disabled">
+						<a href="#customer-dashboard" aria-controls="customer-dashboard" role="tab" data-toggle="tab" class="btn-block">Sales Projection<span class="right-angle"></span><span class=" line"></span></a>
+					</li>
+					<li class="disabled">
+						<a href="#variance-diagnostics" aria-controls="variance-diagnostics" role="tab" data-toggle="tab" class="btn-block">Scenario Planning <span class="right-angle"></span><span class=" line"></span></a>
+					</li>
+					
+					<li>
+						<a href="#score-calculator" aria-controls="variance-diagnostics" role="tab" data-toggle="tab" class="btn-block">Score Calculator <span class="right-angle"></span><span class=" line"></span></a>
+					</li>
+					<li>
+						<a href="#scorecard-engine" aria-controls="home" role="tab" data-toggle="tab" class="btn-block">Scorecard Engine <span class="right-angle"></span><span class=" line"></span></a>
+						<div class="buttom-hide-line"></div>
+					</li>
+					
+				</ul>
+			</div>
+
+		</div>
+		<div class="right-screen">		
+		 <div class="tab-content">
+		 <div class="row row-screen">
+				<h4><span class="pull-right dashbord-title"><span class="pull-right rectangle">	
+				<div class="" >
+				<ul class="nav navbar-nav pull-right">
+					<li >
+						<a href="#">		
+						<i style="color:white;" class="fa fa-power-off"></i>
+							</a>
+					</li>
+				</ul>
+			</div>
+
+			</b></span><br>Powered by Spinnaker Analytics</span></span><br></h4>
+		</div>
+
+		 <div role="tabpanel" class="tab-pane active" id="home">
+		 <div class="row row-screen">
+			<div class="clearfix date-track">
+			<h2 class="title-income date1">Incoming Case Basket</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+			<hr class="hr-line"/>
+		</div>
+		<div class="row  row-screen border-radius">
+		
+           <table class="table table-stripped table-bordered table-custom table-responsive" id="myTable">
+      <thead>
+        <tr class="table-head">
+
+         <th class="text-center "> <B>#</B></th>
+          <th class="text-center "><B>Case ID</B></th>
+          <th class="text-center"><B>Date</B></th>
+          <th class="text-center"><B>Case Size</B></th>
+          <th class="text-center"><B>Industry</B></th>
+          <th class="text-center"><B>State</B></th>
+          <th class="text-center"><B>Face Amount</B></th>
+          <th class="text-center"><B>Broker</B></th>
+          <th class="text-center"><B>Quote Score</B></th>
+          <th class="text-center"><B>Case Priority</B></th>
+
+        </tr>
+      </thead>
+      <tbody>
+ 
+        <tr>
+          <td></td>	
+          <td class="text-center" >	SA4291	</td>	
+          <td class="text-center" >	14/08/17 16:45	</td>	
+          <td class="text-center" >	1579	</td>	
+          <td class="text-center" >	Manufacturing	</td>	
+          <td class="text-center" >	PA	</td>	
+          <td class="text-center" >	$15,77,421	</td>	
+          <td class="text-center" >	MERCER HEALTH & BENEFITS LLC	</td>	
+          <td class="text-center green" >	169	</td>	
+          <td class="text-center" >	4	</td>
+        </tr>
+        
+        <tr>
+        <th class="text-center" scope="row">	2	</th>	
+        <td class="text-center" >	SA4292	</td>	
+        <td class="text-center" >	14/08/17 17:05	</td>	
+        <td class="text-center" >	112	</td>	
+        <td class="text-center" >	Manufacturing	</td>	
+        <td class="text-center" >	TX	</td>	
+        <td class="text-center" >	$1,11,888	</td>	
+        <td class="text-center" >	McGriff Seibels & Williams, Inc.	</td>	
+        <td class="text-center red" >	-142	</td>	
+        <td class="text-center" >	18	</td>
+        </tr>
+
+        <tr>
+<th class="text-center" scope="row">	3	</th>
+<td class="text-center" >	SA4293</td>
+	<td class="text-center" >	14/08/17 17:25</td>
+	<td class="text-center" >	2028</td>
+	<td class="text-center" >	Construction</td>
+	<td class="text-center" >	TX</td>
+	<td class="text-center" >	$20,25,972</td>
+	<td class="text-center" >	Other</td>
+	<td class="text-center light-green" >	35</td>
+	<td class="text-center" >	12</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	4	</th>
+<td class="text-center" >	SA4294</td>
+	<td class="text-center" >	14/08/17 17:37</td>
+	<td class="text-center" >	73</td>
+	<td class="text-center" >	Health Services</td>
+	<td class="text-center" >	ME</td>
+	<td class="text-center" >	$72,927</td>
+	<td class="text-center" >	Health Plans Inc</td>
+	<td class="text-center green" >	120</td>
+	<td class="text-center" >	6</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	5	</th>
+<td class="text-center" >	SA4295</td>
+	<td class="text-center" >	14/08/17 17:57</td>
+	<td class="text-center" >	328</td>
+	<td class="text-center" >	Health Services</td>
+	<td class="text-center" >	AR</td>
+	<td class="text-center" >	$3,27,672</td>
+	<td class="text-center" >	CORESOURCE</td>
+	<td class="text-center light-red" >	-58</td>
+	<td class="text-center" >	14</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	6	</th>
+<td class="text-center" >	SA4296</td>
+	<td class="text-center" >	15/08/17 09:07</td>
+	<td class="text-center" >	23</td>
+	<td class="text-center" >	Professional Services</td>
+	<td class="text-center" >	TX</td>
+	<td class="text-center" >	$22,977</td>
+	<td class="text-center" >	INSURANCE MANAGEMENT SERVICES</td>
+	<td class="text-center light-green" >	73</td>
+	<td class="text-center" >	8</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	7	</th>
+<td class="text-center" >	SA4297</td>
+	<td class="text-center" >	15/08/17 09:13</td>
+	<td class="text-center" >	452</td>
+	<td class="text-center" >	Manufacturing</td>
+	<td class="text-center" >	TX</td>
+	<td class="text-center" >	$4,51,548</td>
+	<td class="text-center" >	GROUP & PENSION ADMINISTRATORS INC</td>
+	<td class="text-center red" >	-111</td>
+	<td class="text-center" >	17</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	8	</th>
+<td class="text-center" >	SA4298</td>
+	<td class="text-center" >	15/08/17 09:15</td>
+	<td class="text-center" >	220</td>
+	<td class="text-center" >	Entertainment & Recreation</td>
+	<td class="text-center" >	TX</td>
+	<td class="text-center" >	$2,19,780</td>
+	<td class="text-center" >	Holmes Murphy & Associates</td>
+	<td class="text-center light-green" >	105</td>
+	<td class="text-center" >	7</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	9	</th>
+<td class="text-center" >	SA4299</td>
+	<td class="text-center" >	15/08/17 09:19</td>
+	<td class="text-center" >	903</td>
+	<td class="text-center" >	Public Administration</td>
+	<td class="text-center" >	TX</td>
+	<td class="text-center" >	$9,02,097</td>
+	<td class="text-center" >	McGriff Seibels & Williams, Inc.</td>
+	<td class="text-center red" >	-159</td>
+	<td class="text-center" >	19</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	10	</th>
+<td class="text-center" >	SA42910</td>
+	<td class="text-center" >	15/08/17 09:20</td>
+	<td class="text-center" >	278</td>
+	<td class="text-center" >	Wholesale Trade</td>
+	<td class="text-center" >	NY</td>
+	<td class="text-center" >	$2,77,722</td>
+	<td class="text-center" >	UNITED HEALTHCARE / UMR / FISERV</td>
+	<td class="text-center light-green" >	68</td>
+	<td class="text-center" >	9</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	11	</th>
+<td class="text-center" >	SA42911</td>
+	<td class="text-center" >	15/08/17 09:20</td>
+	<td class="text-center" >	321</td>
+	<td class="text-center" >	Professional Services</td>
+	<td class="text-center" >	PA</td>
+	<td class="text-center" >	$3,20,679</td>
+	<td class="text-center" >	WILLIS / HRH</td>
+	<td class="text-center green" >	162</td>
+	<td class="text-center" >	5</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	12	</th>
+<td class="text-center" >	SA42912</td>
+	<td class="text-center" >	15/08/17 09:22</td>
+	<td class="text-center" >	210</td>
+	<td class="text-center" >	Professional Services</td>
+	<td class="text-center" >	PA</td>
+	<td class="text-center" >	$2,09,790</td>
+	<td class="text-center" >	Hays Companies</td>
+	<td class="text-center green" >	198</td>
+	<td class="text-center" >	2</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	13	</th>
+<td class="text-center" >	SA42913</td>
+	<td class="text-center" >	15/08/17 09:25</td>
+	<td class="text-center" >	952</td>
+	<td class="text-center" >	Manufacturing</td>
+	<td class="text-center" >	PA</td>
+	<td class="text-center" >	$9,51,048</td>
+	<td class="text-center" >	Other</td>
+	<td class="text-center light-green" >	42</td>
+	<td class="text-center" >	11</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	14	</th>
+<td class="text-center" >	SA42914</td>
+	<td class="text-center" >	15/08/17 09:27</td>
+	<td class="text-center" >	1213</td>
+	<td class="text-center" >	Wholesale Trade</td>
+	<td class="text-center" >	PA</td>
+	<td class="text-center" >	$12,11,787</td>
+	<td class="text-center" >	Other</td>
+	<td class="text-center light-green" >	46</td>
+	<td class="text-center" >	10</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	15	</th>
+<td class="text-center" >	SA42915</td>
+	<td class="text-center" >	15/08/17 09:27</td>
+	<td class="text-center" >	2760</td>
+	<td class="text-center" >	Membership Organizations</td>
+	<td class="text-center" >	TX</td>
+	<td class="text-center" >	$27,57,240</td>
+	<td class="text-center" >	Gallagher Benefit Services</td>
+	<td class="text-center red" >	-169</td>
+	<td class="text-center" >	20</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	16	</th>
+<td class="text-center" >	SA42916</td>
+	<td class="text-center" >	15/08/17 09:28</td>
+	<td class="text-center" >	118</td>
+	<td class="text-center" >	Health Services</td>
+	<td class="text-center" >	PA</td>
+	<td class="text-center" >	$1,17,882</td>
+	<td class="text-center" >	Consolidated Benefits, Inc.</td>
+	<td class="text-center green" >	176</td>
+	<td class="text-center" >	3</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	17	</th>
+<td class="text-center" >	SA42917</td>
+	<td class="text-center" >	15/08/17 09:30</td>
+	<td class="text-center" >	178</td>
+	<td class="text-center" >	Manufacturing</td>
+	<td class="text-center" >	IN</td>
+	<td class="text-center" >	$1,77,822</td>
+	<td class="text-center" >	Gallagher Benefit Services</td>
+	<td class="text-center light-red" >	-58</td>
+	<td class="text-center" >	15</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	18	</th>
+<td class="text-center" >	SA42918</td>
+	<td class="text-center" >	15/08/17 09:32</td>
+	<td class="text-center" >	135</td>
+	<td class="text-center" >	Manufacturing</td>
+	<td class="text-center" >	PA</td>
+	<td class="text-center" >	$1,34,865</td>
+	<td class="text-center" >	Mutual Health Services</td>
+	<td class="text-center light-red" >	30</td>
+	<td class="text-center" >	13</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	19	</th>
+<td class="text-center" >	SA42919</td>
+	<td class="text-center" >	15/08/17 09:33</td>
+	<td class="text-center" >	4789</td>
+	<td class="text-center" >	Transportation</td>
+	<td class="text-center" >	GA</td>
+	<td class="text-center" >	$47,84,211</td>
+	<td class="text-center" >	Acordia / Wells Fargo / Wachovia</td>
+	<td class="text-center green" >	247</td>
+	<td class="text-center" >	1</td>
+</tr>
+<tr>
+<th class="text-center" scope="row">	20	</th>
+<td class="text-center" >	SA42920</td>
+	<td class="text-center" >	15/08/17 09:35</td>
+	<td class="text-center" >	349</td>
+	<td class="text-center" >	Retail</td>
+	<td class="text-center" >	IN</td>
+	<td class="text-center" >	$3,48,651</td>
+	<td class="text-center" >	Other</td>
+	<td class="text-center red" >	-78</td>
+	<td class="text-center" >	16</td>
+</tr>
+ </tbody>
+    </table>
+   
+		</div>
+		</div>
+
+
+
+<div role="tabpanel" class="tab-pane" id="sales-track">
+<div class="row row-screen">
+		<div class="clearfix date-track">
+			<h2 class="title-income date1">Case Tracker</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+			<hr class="hr-line"/>
+		</div>
+
+	<div class="row row-screen whiteboard" id="navigation">
+		<div class="">
+			<div class="pull-right date-time dropdown"><a  href="" class="  dropdown-toggle" id="menu1" data-toggle="dropdown"> Last Full Month <i class="fa fa-caret-down" aria-hidden="true" ></i></a>
+
+			<ul class="dropdown-menu " role="menu" aria-labelledby="menu1">
+		      <li role="presentation"><a role="menuitem" tabindex="-1" href="month-date.html#sales-track">Month To Date</a></li>
+		      <li role="presentation"><a role="menuitem" tabindex="-1" href="quarterdate.html#sales-track">Quarter To Date</a></li>
+		      <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html#sales-track">Year To Date View</a></li>
+		   
+		      <li role="presentation"><a role="menuitem" tabindex="-1" href="lastfullquarter.html#sales-track">Last Full Quarter
+			</a></li>
+		    </ul>
+		     <h3 style="margin-top:0px;"><small>Jul 1, 2017 - Jul 31, 2017</small></h3>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row row-screen">
+		<div class=" ">
+		<div class="table-container">
+		<div class="table-inner1">
+			<table class="table marB15">
+				<thead>
+					<tr>
+						<th class="text-center">Last Full Month</th>
+						<th class="text-center">Vs. Plan</th>
+						<th class="text-center">Vs. Last Year</th>
+					</tr>
+				</thead>
+				<tbody>
+							<h3 class="text-center" style="font-weight: bold;">Overview</h3>
+
+					<tr>
+						<td class="btn-group-sale "  width="45%">
+						<div class="gross-year padT10"># of Cases Quoted</div><button class="btn ">583</button>
+						
+						</td>
+						<td class="">
+							<div class="btn-handle">
+							<button class="btn btn-sales-down btn-block retative">560<i class="fa fa-arrow-up" aria-hidden="true"></i><span>4%</span></button>
+							</div>
+
+						</td>
+						<td class="">
+						<div class="btn-handle">
+							<button class="btn btn-sales-down1 btn-block retative">525 <i class="fa fa-arrow-up" aria-hidden="true"></i><span>11%</span></button>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="btn-group-sale "  width="45%">
+						
+						<div class="gross-year padT10">Face Amount of Cases Quoted ($M)</div><button class="btn ">$323</button>
+						
+						</td>
+						<td class="">
+						<div class="btn-handle">
+							<button class="btn btn-sales-down btn-block retative">$301<i class="fa fa-arrow-up" aria-hidden="true"></i><span>7%</span></button>
+							</div>
+						</td>
+						<td class="">
+							<div class="btn-handle">
+							<button class="btn btn-sales-down1 btn-block retative">$256<i class="fa fa-arrow-up" aria-hidden="true"></i><span>26%</span></button>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="btn-group-sale "  width="45%">
+						
+						<div class="gross-year padT10">Quote Ratio </div><button class="btn ">42%</button>
+						
+						</td>
+						<td class="">
+						<div class="btn-handle">
+							<button class="btn btn-sales-down btn-block retative">40%<i class="fa fa-arrow-up" aria-hidden="true"></i><span>5%</span></button>
+							</div>
+						</td>
+						<td class="">
+						<div class="btn-handle">
+							<button class="btn btn-sales-down1 btn-block retative">39%<i class="fa fa-arrow-up" aria-hidden="true"></i><span>8%</span></button>
+							</div>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table></div>
+</div>
+</div>
+
+				<div class="row row-screen">
+
+						<h3 class="text-center title-dg">Historical Trend</h3>
+
+			<div class="table-container">
+
+			<div class="row row-screen table-inner1" >
+			<h4 class="text-center" style="font-weight: bold;"># of Quoted Cases</h4>
+			<div class="retative">
+			<div class="dot-hide"></div>
+				
+			<div id="yeartodate" style="width: 50% ;margin-bottom: 30px;"></div>
+			</div>
+	<div style="float:right;" >
+	<div class="row">
+		<div class="foo blue"> </div>
+		<div class="" style="font-weight: bold;">
+		Pre Implementation  </div>
+  	</div>
+	<div class="row">
+	  <div class="foo darkblue"> </div>
+	  <div class="" style="font-weight: bold;">
+		Post Implementation  </div>
+	  </div>
+ 	</div>
+	
+			<h4 class="text-center" style="font-weight: bold;">Face Amount of Quoted Cases ($M)</h4>
+			<div class="retative">
+			<div class="dot-hide"></div>
+			<div id="yeartodate1" style="width: 50% ;margin-bottom: 30px;"></div>
+			</div>
+			</div>
+			
+</div>
+</div>
+
+	
+	
+	<div class="row row-screen">
+	<h3 class="text-center title-dg">Cases By Broker</h3>
+		<div class=" ">
+		<div class="table-container1">
+		<div class="table-inner">
+			<table class="table marB15" border="1">
+				<thead>
+					<tr>
+						
+						<th >Broker</th>
+						<th class="text-center">Quote FA ($M)</th>
+						<th class="text-center">Quote FA Mix %</th>
+						<th class="text-center">Total Prospects</th>
+						<th class="text-center"># Of Quoted Cases </th>
+						<th class="text-center">Quote Ratio</th>
+						<th class="text-center">Avg. FA per Quote</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td >	Mercer Health & Benefits Llc	</td>
+					<td class="text-center">	$1,45,32,656	</td>
+					<td class="text-center">	4.5%	</td>
+					<td class="text-center">	56	</td>
+					<td class="text-center">	26	</td>
+					<td class="text-center">	46%	</td>
+					<td class="text-center">	$5,61,649	</td>	</tr>
+					<tr>
+					<td >	Willis / HRH	</td>
+					<td class="text-center">	$1,21,10,547	</td>
+					<td class="text-center">	3.8%	</td>
+					<td class="text-center">	47	</td>
+					<td class="text-center">	23	</td>
+					<td class="text-center">	48%	</td>
+					<td class="text-center">	$5,38,247	</td>	</tr>
+					<tr>
+					<td >	Hays Companies	</td>
+					<td class="text-center">	$1,06,57,281	</td>
+					<td class="text-center">	3.3%	</td>
+					<td class="text-center">	41	</td>
+					<td class="text-center">	19	</td>
+					<td class="text-center">	45%	</td>
+					<td class="text-center">	$5,74,130	</td>	</tr>
+					<tr>
+					<td >	Gallagher Benefit Services	</td>
+					<td class="text-center">	$96,88,438	</td>
+					<td class="text-center">	3.0%	</td>
+					<td class="text-center">	38	</td>
+					<td class="text-center">	17	</td>
+					<td class="text-center">	44%	</td>
+					<td class="text-center">	$5,87,178	</td>	</tr>
+					<tr>
+					<td >	Consolidated Benefits, Inc.	</td>
+					<td class="text-center">	$96,88,438	</td>
+					<td class="text-center">	3.0%	</td>
+					<td class="text-center">	38	</td>
+					<td class="text-center">	16	</td>
+					<td class="text-center">	43%	</td>
+					<td class="text-center">	$6,00,833	</td>	</tr>
+					<tr>
+					<td >	Acordia / Wells Fargo / Wachovia	</td>
+					<td class="text-center">	$92,04,016	</td>
+					<td class="text-center">	2.9%	</td>
+					<td class="text-center">	36	</td>
+					<td class="text-center">	16	</td>
+					<td class="text-center">	45%	</td>
+					<td class="text-center">	$5,74,130	</td>	</tr>
+					<tr>
+					<td >	Health Plans Inc	</td>
+					<td class="text-center">	$84,77,383	</td>
+					<td class="text-center">	2.6%	</td>
+					<td class="text-center">	33	</td>
+					<td class="text-center">	15	</td>
+					<td class="text-center">	46%	</td>
+					<td class="text-center">	$5,61,649	</td>	</tr>
+					<tr>
+					<td >	Coresource	</td>
+					<td class="text-center">	$77,50,750	</td>
+					<td class="text-center">	2.4%	</td>
+					<td class="text-center">	30	</td>
+					<td class="text-center">	13	</td>
+					<td class="text-center">	42%	</td>
+					<td class="text-center">	$6,15,139	</td>	</tr>
+					<tr>
+					<td >	Insurance Management Services	</td>
+					<td class="text-center">	$72,66,328	</td>
+					<td class="text-center">	2.3%	</td>
+					<td class="text-center">	28	</td>
+					<td class="text-center">	12	</td>
+					<td class="text-center">	44%	</td>
+					<td class="text-center">	$5,87,178	</td>	</tr>
+					<tr>
+					<td >	Holmes Murphy & Associates	</td>
+					<td class="text-center">	$71,04,854	</td>
+					<td class="text-center">	2.2%	</td>
+					<td class="text-center">	28	</td>
+					<td class="text-center">	12	</td>
+					<td class="text-center">	45%	</td>
+					<td class="text-center">	$5,74,130	</td>	</tr>
+
+				</tbody>
+			</table>
+			</div>
+			<button class="btn btn-sm" style="color:#fff;background: gray;">View Other Brokers</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="row row-screen">
+	<h3 class="text-center title-dg">Case Characteristics</h3>
+		<div class=" ">
+		<div class="table-container1">
+		<div class="row retative">
+		<div class="bg-white"></div>
+			<div id='piechart' ></div>
+			
+		</div>
+		<div class="row retative">
+		<div class="bg-white"></div>
+			<div id='piechart1'></div>
+			
+		</div>
+		<div class="row retative">
+		<div class="bg-white"></div>
+			<div id='piechart2'></div>
+			
+		</div>
+		
+		</div>
+		</div>
+		</div>
+
+
+	<div class="row row-screen">
+	<h3 class="text-center title-dg">Cases By Geography</h3>
+		<div class=" ">
+		<div class="table-container1">
+		<div class="table-inner">
+			<table class=" table marB15" border="1">
+				<thead>
+					<tr>
+						<th >State</th>
+						<th class="text-center">Quote FA ($M)</th>
+						<th class="text-center">Quote FA Mix %</th>
+						<th class="text-center">Total Prospects</th>
+						<th class="text-center"># of Quoted Cases</th>
+						<th class="text-center">Quote Ratio</th>
+						<th class="text-center">Avg. FA per Quote</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td >	MA	</td>
+					<td class="text-center">	$2,90,65,313	</td>
+					<td class="text-center">	9%	</td>
+					<td class="text-center">	113	</td>
+					<td class="text-center">	53	</td>
+					<td class="text-center">	47%	</td>
+					<td class="text-center">	$5,49,699	</td>
+					</tr>
+					<tr>
+					<td >	CA	</td>
+					<td class="text-center">	$2,42,21,094	</td>
+					<td class="text-center">	8%	</td>
+					<td class="text-center">	94	</td>
+					<td class="text-center">	43	</td>
+					<td class="text-center">	46%	</td>
+					<td class="text-center">	$5,61,649	</td>
+					</tr>
+					<tr>
+					<td >	PA	</td>
+					<td class="text-center">	$2,13,14,563	</td>
+					<td class="text-center">	7%	</td>
+					<td class="text-center">	83	</td>
+					<td class="text-center">	35	</td>
+					<td class="text-center">	43%	</td>
+					<td class="text-center">	$6,00,833	</td>
+					</tr>
+					<tr>
+					<td >	TX	</td>
+					<td class="text-center">	$1,93,76,875	</td>
+					<td class="text-center">	6%	</td>
+					<td class="text-center">	75	</td>
+					<td class="text-center">	34	</td>
+					<td class="text-center">	45%	</td>
+					<td class="text-center">	$5,74,130	</td>
+					</tr>
+					<tr>
+					<td >	ME	</td>
+					<td class="text-center">	$1,93,76,875	</td>
+					<td class="text-center">	6%	</td>
+					<td class="text-center">	75	</td>
+					<td class="text-center">	35	</td>
+					<td class="text-center">	47%	</td>
+					<td class="text-center">	$5,49,699	</td>
+					</tr>
+					<tr>
+					<td >	AR	</td>
+					<td class="text-center">	$1,84,08,031	</td>
+					<td class="text-center">	6%	</td>
+					<td class="text-center">	71	</td>
+					<td class="text-center">	31	</td>
+					<td class="text-center">	43%	</td>
+					<td class="text-center">	$6,00,833	</td>
+					</tr>
+					<tr>
+					<td >	NY	</td>
+					<td class="text-center">	$1,69,54,766	</td>
+					<td class="text-center">	5%	</td>
+					<td class="text-center">	66	</td>
+					<td class="text-center">	32	</td>
+					<td class="text-center">	49%	</td>
+					<td class="text-center">	$5,27,262	</td>
+					</tr>
+					<tr>
+					<td >	IN	</td>
+					<td class="text-center">	$1,55,01,500	</td>
+					<td class="text-center">	5%	</td>
+					<td class="text-center">	60	</td>
+					<td class="text-center">	25	</td>
+					<td class="text-center">	42%	</td>
+					<td class="text-center">	$6,15,139	</td>
+					</tr>
+					<tr>
+					<td >	GA	</td>
+					<td class="text-center">	$1,45,32,656	</td>
+					<td class="text-center">	5%	</td>
+					<td class="text-center">	56	</td>
+					<td class="text-center">	23	</td>
+					<td class="text-center">	40%	</td>
+					<td class="text-center">	$6,45,896	</td>
+					</tr>
+					<tr>
+					<td >	MI	</td>
+					<td class="text-center">	$1,42,09,708	</td>
+					<td class="text-center">	4%	</td>
+					<td class="text-center">	55	</td>
+					<td class="text-center">	23	</td>
+					<td class="text-center">	41%	</td>
+					<td class="text-center">	$6,30,142	</td>
+					</tr>
+
+				</tbody>
+			</table>
+			</div>
+		<button class="btn btn-sm" style="color:#fff;background: gray;">View Other States</button>
+		
+		</div>
+		</div>
+		
+		</div>
+		
+		<div class="row row-screen">
+	<h3 class="text-center title-dg">Cases By Top Sectors</h3>
+		<div class=" ">
+		<div class="table-container1">
+		<div class="table-inner">
+			<table class=" table marB15" border="1">
+				<thead>
+					<tr>
+						<th >Industry/Sector</th>
+						<th class="text-center">Quote FA ($M)</th>
+						<th class="text-center">Quote FA Mix %</th>
+						<th class="text-center">Total Prospects</th>
+						<th class="text-center"># of Quoted Cases</th>
+						<th class="text-center">Quote Ratio</th>
+						<th class="text-center">Avg. FA per Quote</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td >	Manufacturing	</td>
+					<td class="text-center">	$4,06,91,438	</td>
+					<td class="text-center">	13%	</td>
+					<td class="text-center">	158	</td>
+					<td class="text-center">	68	</td>
+					<td class="text-center">	43%	</td>
+					<td class="text-center">	$6,00,833	</td>	</tr>
+					<tr>
+					<td >	Construction	</td>
+					<td class="text-center">	$3,39,09,531	</td>
+					<td class="text-center">	11%	</td>
+					<td class="text-center">	131	</td>
+					<td class="text-center">	54	</td>
+					<td class="text-center">	41%	</td>
+					<td class="text-center">	$6,30,142	</td>	</tr>
+					<tr>
+					<td >	Health Services	</td>
+					<td class="text-center">	$2,98,40,388	</td>
+					<td class="text-center">	9%	</td>
+					<td class="text-center">	116	</td>
+					<td class="text-center">	52	</td>
+					<td class="text-center">	45%	</td>
+					<td class="text-center">	$5,74,130	</td>	</tr>
+					<tr>
+					<td >	Professional Services	</td>
+					<td class="text-center">	$2,71,27,625	</td>
+					<td class="text-center">	8%	</td>
+					<td class="text-center">	105	</td>
+					<td class="text-center">	49	</td>
+					<td class="text-center">	47%	</td>
+					<td class="text-center">	$5,49,699	</td>	</tr>
+					<tr>
+					<td >	Entertainment & Recreation	</td>
+					<td class="text-center">	$2,71,27,625	</td>
+					<td class="text-center">	8%	</td>
+					<td class="text-center">	105	</td>
+					<td class="text-center">	50	</td>
+					<td class="text-center">	48%	</td>
+					<td class="text-center">	$5,38,247	</td>	</tr>
+					<tr>
+					<td >	Public Administration	</td>
+					<td class="text-center">	$2,57,71,244	</td>
+					<td class="text-center">	8%	</td>
+					<td class="text-center">	100	</td>
+					<td class="text-center">	47	</td>
+					<td class="text-center">	47%	</td>
+					<td class="text-center">	$5,49,699	</td>	</tr>
+					<tr>
+					<td >	Wholesale Trade	</td>
+					<td class="text-center">	$2,37,36,672	</td>
+					<td class="text-center">	7%	</td>
+					<td class="text-center">	92	</td>
+					<td class="text-center">	41	</td>
+					<td class="text-center">	45%	</td>
+					<td class="text-center">	$5,74,130	</td>	</tr>
+					<tr>
+					<td >	Membership Organizations	</td>
+					<td class="text-center">	$2,17,02,100	</td>
+					<td class="text-center">	7%	</td>
+					<td class="text-center">	84	</td>
+					<td class="text-center">	39	</td>
+					<td class="text-center">	47%	</td>
+					<td class="text-center">	$5,49,699	</td>	</tr>
+					<tr>
+					<td >	Transportation	</td>
+					<td class="text-center">	$2,03,45,719	</td>
+					<td class="text-center">	6%	</td>
+					<td class="text-center">	79	</td>
+					<td class="text-center">	33	</td>
+					<td class="text-center">	42%	</td>
+					<td class="text-center">	$6,15,139	</td>	</tr>
+					<tr>
+					<td >	Retail	</td>
+					<td class="text-center">	$2,00,22,771	</td>
+					<td class="text-center">	6%	</td>
+					<td class="text-center">	78	</td>
+					<td class="text-center">	33	</td>
+					<td class="text-center">	43%	</td>
+					<td class="text-center">	$6,07,902	</td>	</tr>
+				</tbody>
+			</table>
+			</div>
+		<button class="btn btn-sm" style="color:#fff;background: gray;">View Other Sectors</button>
+		
+		</div>
+		</div>
+		
+		</div>
+
+		<div class="row row-screen">
+	<h3 class="text-center title-dg">Selling Ratio vs. Quoting Ratio By Top Brokers</h3>
+		<div class="image-set">
+	<img src="images/Top Broker Bubble SR QR.png" class="width-fluid">
+		</div>
+		</div>
+
+		<div class="row row-screen">
+	<h3 class="text-center title-dg">Selling Ratio vs. Quoting Ratio By States</h3>
+		<div class="image-set">
+	<img src="images/States SR QR.png" class="width-fluid">
+		</div>
+		</div>
+
+
+</div>
+
+
+
+
+<div role="tabpanel" class="tab-pane" id="score-calculator">
+		 <div class="row row-screen">
+
+			<div class="clearfix date-track">
+			<h2 class="title-income date1">Score Calculator</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+			<hr class="hr-line"/>
+		</div>
+		<form id="score_form" name="score_form">
+				 <div class="table-container">
+				 <div class="row row-screen">
+				 <label class="tab-title date1">Case Characteristics</label>
+
+				 </div>
+				 <br>
+		<div class="row  row-screen border-radius">
+		
+		<div class="row select-option">
+
+ <div class="form-group col-md-4">
+  <label >Case Size Bucket:</label>
+  </div>
+  <div class="form-group col-md-6">
+  <select required class="selectpicker form-control" id="case-size">
+  <option value="" selected>--Select Case Size--</option>
+    <option value="-2">U100</option>
+    <option value="-23">100-199</option>
+    <option value="-16">200-499</option>
+    <option value="-4">500-999</option>
+    <option value="32">1000-2999</option>
+    <option value="334">3000+</option>
+  </select>
+  </div>
+  </div>
+
+
+
+
+<div class="row select-option">
+ <div class="form-group col-md-4">
+  <label class="">Industry:</label>
+  </div>
+  <div class="form-group col-md-6">
+  <select required class="selectpicker form-control" id="industry">
+  <option selected value="">--Select Industry--</option>
+    <option value="-232">	Agriculture	</option>
+	<option value="-232">	Nonclassifiable	</option>
+	<option value="-191">	Membership Organizations	</option>
+	<option value="-117">	Mining	</option>
+	<option value="-60">	Public Administration	</option>
+	<option value="-56">	Wholesale Trade	</option>
+	<option value="-31">	Legal Services	</option>
+	<option value="-29">	Transportation	</option>
+	<option value="-23">	Manufacturing	</option>
+	<option value="-13">	Retail	</option>
+	<option value="-6">	Health Services	</option>
+	<option value="28">	Social Services	</option>
+	<option value="50">	Construction	</option>
+	<option value="79">	Personal & Business Services	</option>
+	<option value="103">	Communications & Utilities	</option>
+	<option value="105">	Professional Services	</option>
+	<option value="108">	Entertainment & Recreation	</option>
+	<option value="127">	Financial Services	</option>
+	<option value="175">	Education	</option>
+
+  </select>
+  </div>
+  </div>
+
+<div class="row select-option">
+ <div class="form-group col-md-4">
+  <label >State:</label>
+  </div>
+  <div class="form-group col-md-6">
+  <select required class="form-control" id="state">
+    <option value="" selected>--Select State--</option>
+ 
+    <option value="-276">	DE	</option>
+	<option value="-265">	WV	</option>
+	<option value="-247">	MS	</option>
+	<option value="-230">	NM	</option>
+	<option value="-182">	AL	</option>
+	<option value="-148">	ND	</option>
+	<option value="-110">	UT	</option>
+	<option value="-105">	KY	</option>
+	<option value="-100">	TN	</option>
+	<option value="-96">	VT	</option>
+	<option value="-93">	NE	</option>
+	<option value="-85">	GA	</option>
+	<option value="-80">	MI	</option>
+	<option value="-77">	ID	</option>
+	<option value="-56">	WI	</option>
+	<option value="-55">	LA	</option>
+	<option value="-53">	OH	</option>
+	<option value="-52">	KS	</option>
+	<option value="-47">	IA	</option>
+	<option value="-45">	WY	</option>
+	<option value="-38">	IL	</option>
+	<option value="-32">	IN	</option>
+	<option value="-30">	TX	</option>
+	<option value="-27">	VA	</option>
+	<option value="-23">	SD	</option>
+	<option value="-16">	OK	</option>
+	<option value="-10">	AR	</option>
+	<option value="-4">	CA	</option>
+	<option value="10">	MT	</option>
+	<option value="16">	AZ	</option>
+	<option value="30">	MA	</option>
+	<option value="30">	DC	</option>
+	<option value="46">	ME	</option>
+	<option value="51">	MO	</option>
+	<option value="75">	NC	</option>
+	<option value="86">	PA	</option>
+	<option value="86">	MD	</option>
+	<option value="89">	MN	</option>
+	<option value="98">	NJ	</option>
+	<option value="109">	NY	</option>
+	<option value="118">	NV	</option>
+	<option value="142">	SC	</option>
+	<option value="147">	AK	</option>
+	<option value="151">	CO	</option>
+	<option value="152">	FL	</option>
+	<option value="162">	NH	</option>
+	<option value="180">	CT	</option>
+	<option value="227">	OR	</option>
+	<option value="243">	WA	</option>
+	<option value="315">	RI	</option>
+  </select>
+  </div>
+  </div>
+<div class="row select-option">
+ <div class="form-group col-md-4">
+  <label >Seasonality:</label>
+  </div>
+  <div class="form-group col-md-6">
+  <select required class="form-control" id="seasonality">
+      <option value="" selected>--Select Seasonality--</option>
+	<option value="30">	Jan	</option>
+	<option value="20">	Feb	</option>
+	<option value="119">	March	</option>
+	<option value="39">	April	</option>
+	<option value="102">	May	</option>
+	<option value="91">	June	</option>
+	<option value="54">	July	</option>
+	<option value="-15">	Aug	</option>
+	 <option value="-171">	Sep	</option>
+	<option value="-50">	Oct	</option>
+	<option value="93">	Nov	</option>
+	<option value="250">	Dec	</option>
+
+  </select>
+  </div>
+  </div>
+
+
+<div class="row select-option">
+ <div class="form-group col-md-4">
+  <label> Broker:</label>
+
+  </div>
+  <div class="form-group col-md-6">
+  <select required class="form-control" id="broker" required>
+    <option value="" selected>--Select Broker--</option>
+  <option value="-198">	AUXIANT	</option>
+<option value="-165">	Alternative Risk Solutions	</option>
+<option value="-111">	Stop Loss Insurance Services / AmWINS Group Benefits	</option>
+<option value="-64">	stHealth Benefit Solutions / Formerly Comrisk	</option>
+<option value="-55">	EMPLOYEE BENEFIT CONSULTANTS	</option>
+<option value="-51">	McGriff Seibels & Williams, Inc.	</option>
+<option value="-41">	MERITAIN HEALTH	</option>
+<option value="-26">	GROUP & PENSION ADMINISTRATORS INC	</option>
+<option value="-22">	United Benefits, Inc. / FBMC / Brown & Brown	</option>
+<option value="-20">	MUTUAL ASSURANCE ADMINISTRATORS	</option>
+<option value="-19">	National Medical Excess, LLC	</option>
+<option value="-19">	COMPREHENSIVE BENEFITS ADMINISTRATOR, INC/EBPA	</option>
+<option value="-17">	LOOMIS	</option>
+<option value="-14">	FIRST ADMINISTRATORS	</option>
+<option value="-14">	KEY FAMILY OF COMPANIES (KBA / EBS)	</option>
+<option value="-11">	CORESOURCE	</option>
+<option value="-10">	AULTRA GROUP	</option>
+<option value="-1">	Other	</option>
+<option value="2">	WILLIS / HRH	</option>
+<option value="2">	INSURANCE RISK MANAGEMENT / OLD NATIONAL	</option>
+<option value="2">	RMSCO INC.	</option>
+<option value="5">	Mutual Health Services	</option>
+<option value="8">	Comrisk / BenefitMall	</option>
+<option value="10">	CCHI	</option>
+<option value="10">	AMERIHEALTH ADMINISTRATORS, INC.	</option>
+<option value="14">	MEDICAL BENEFITS ADMINISTRATORS, INC.	</option>
+<option value="15">	INSURANCE MANAGEMENT SERVICES	</option>
+<option value="16">	NCAS	</option>
+<option value="16">	HUB International	</option>
+<option value="21">	Lockton Benefits Company	</option>
+<option value="25">	BENEFIT ADMINISTRATIVE SYSTEMS, LTD	</option>
+<option value="28">	Cottingham & Butler, Inc.	</option>
+<option value="35">	Gallagher Benefit Services	</option>
+<option value="38">	Hays Companies	</option>
+<option value="40">	Diversified Group Brokerage	</option>
+<option value="42">	Acordia / Wells Fargo / Wachovia	</option>
+<option value="47">	UNITED HEALTHCARE / UMR / FISERV	</option>
+<option value="50">	Kibble & Prentice	</option>
+<option value="52">	USI Administrators	</option>
+<option value="59">	PREFERRED ONE ADMINISTRATIVE SERVICES	</option>
+<option value="59">	Holmes Murphy & Associates	</option>
+<option value="89">	MERCER HEALTH & BENEFITS LLC	</option>
+<option value="96">	AON Consulting / Hewitt & Associates	</option>
+<option value="97">	Health Plans Inc	</option>
+<option value="110">	CNIC HEALTH SOLUTIONS	</option>
+<option value="129">	PLANNED ADMINISTRATORS INC	</option>
+<option value="135">	Consolidated Benefits, Inc.	</option>
+<option value="141">	Alliant Insurance Services	</option>
+<option value="625">	Towers Perrin / Watson Wyatt	</option>
+
+  </select>
+  </div>
+  </div>
+
+</div>
+</div>
+ <div class="text-center">
+<input type = "submit" class = "btn btn-success select-option" value="Submit"></input>
+<input type = "reset" id="reset-button" onclick="reset_div()" class = "btn btn-info select-option" value="Reset"></input>
+
+</div>
+<br>
+</form>
+
+
+<br>
+ <div class="row table-container" style="display: none;" id="score-output-div">
+<div class="row select-option">
+ <div class="col-md-4 score_div">
+  <label >Score</label>
+  </div>
+  <div class="col-md-6 score_div" id="score-output-value">
+  </div>
+  </div>
+  </div>
+            
+</div>
+
+
+
+<div role="tabpanel" class="tab-pane" id="scorecard-engine">
+<div class="clearfix date-track">
+			<h2 class="title-income date1">Scorecard Engine</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+		<hr class="hr-line"/>
+<h3 class="text-center title-dg">Overall Methodology</h3>
+<div class="image-set">
+	<img src="images/QPS Methodology Slide.png" class="width-fluid">
+</div>
+
+<h3 class="text-center title-dg">Variables Considered</h3>
+<div class="btn-set">
+
+  <a class="btn btn-green">Broker</a>
+ <a class="btn btn-green">State</a>
+  <a class="btn btn-green">Urban/Rural</a>
+  <a class="btn btn-default">TTM Broker Prospects</a>
+  <a class="btn btn-default">Rep Experience Cohort</a>
+  <a class="btn btn-default">Product</a>
+  <a class="btn btn-green">Case Size</a>
+  <a class="btn btn-default">Zip Code</a>
+   <a class="btn btn-green"># of Lives</a>
+  <a class="btn btn-default">Broker Previous Prospect Gestation Period</a>
+  <a class="btn btn-default">Broker Discounting</a>
+  <a class="btn btn-green">Seasonality</a>
+  <a class="btn btn-green">FO Presence</a>
+  <a class="btn btn-default">TTM Broker QR</a>
+  <a class="btn btn-default">TTM Broker Profitability</a>
+  <a class="btn btn-default">Rep Discounting</a>
+  <a class="btn btn-green">Industry</a>
+   <a class="btn btn-green">Market Type (BUCA vs. TPA)</a>
+   <a class="btn btn-default">TTM Broker FA</a>
+  <a class="btn btn-default">Industry Profitability</a>
+  <a class="btn btn-default">BUCA %</a>
+  <a class="btn btn-green">Sub-industry</a>
+  <a class="btn btn-green">Rep</a>
+   <a class="btn btn-default">TTM Broker SR</a>
+    <a class="btn btn-default">Region/State Profitability</a>
+    <a class="btn btn-default">Self Insured vs. Fully Insured</a>
+       <a class="btn btn-default">TTM Broker Sold Cases</a>
+   
+   
+</div>
+<h3 class="text-center title-dg">Attribute Ranking By Variables</h3>
+<div class="image-set">
+	<img src="images/Attribute Scoring pic.png" class="width-fluid">
+</div>
+<h3 class="text-center title-dg">Cross Attribute Ranking</h3>
+<div class="image-set">
+	<img src="images/Attribute Ranking Pic.png" class="width-fluid">
+</div>
+
+<h3 class="text-center title-dg">Attribute Score By Influencing Variables</h3>
+<div class="image-set">
+	<img src="images/Attribute Scores.png" class="width-fluid">
+</div>
+
+
+</div>
+
+
+<div role="tabpanel" class="tab-pane" id="return-track"> 
+<div class="row row-screen">
+		<div class="clearfix date-track">
+			<h2 class="title-income date1">Productivity Tracker by Role</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+			<hr class="hr-line"/>
+		</div>
+	<div class="row row-screen">
+	<h3 class="text-center" style="font-weight: bold;">This Page Has Been Disabled</h3>
+</div>
+</div>
+
+<div role="tabpanel" class="tab-pane" id="customer-dashboard">
+<div class="row row-screen">
+		<div class="clearfix date-track">
+			<h2 class="title-income date1">Sales Projection</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+			<hr class="hr-line"/>
+		</div>
+	<div class="row row-screen">
+	<h3 class="text-center" style="font-weight: bold;">This Page Has Been Disabled</h3>
+</div>
+</div>
+
+<div role="tabpanel" class="tab-pane" id="variance-diagnostics">
+	<div class="row row-screen">
+		<div class="clearfix date-track">
+			<h2 class="title-income date1">Scenario Planning</h2>
+			<h4 class="title-income date2">As On Aug 15, 2017</h4>
+		</div>
+			<hr class="hr-line"/>
+		</div>
+	<div class="row row-screen">
+	<h3 class="text-center" style="font-weight: bold;">This Page Has Been Disabled</h3>
+</div>
+</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+
+<script src="js/highcharts.js"></script>
+
+<script src="js/exporting.js"></script>
+<script type="text/javascript" src="js/zingchart.min.js"></script>
+<script type="text/javascript" src="js/zingchart-pie.min.js"></script>
+<script type="text/javascript" src="js/lastfullmonth.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+		</script> 
+
+</body>
+</html>
+
